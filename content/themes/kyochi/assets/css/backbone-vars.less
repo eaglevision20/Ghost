@@ -1,0 +1,262 @@
+//	Backbone v1.8, Copyright 2014, Joe Mottershaw, https://github.com/joemottershaw/
+//	================================================================================
+
+//	Table of Contents
+//	==================================================
+//		#Backbone Variables
+//		#Theme Variables
+
+
+//	#Backbone Variables
+//	==================================================
+
+	// Media Query Breakpoints
+		@large-desktop:		~"only screen and (min-width: 1200px)";
+		@desktop-tablet:	~"only screen and (max-width: 979px)";
+		@tablet-mobile: 	~"only screen and (max-width: 767px)";
+		@mobile:			~"only screen and (max-width: 479px)";
+
+	// Page
+		@primary-color: #222222;
+		@primary-color-grey: greyscale(@primary-color);
+
+		@secondary-color: #DF722A;
+		@secondary-color-grey: greyscale(@secondary-color);
+
+		@body-background-color: #F0F0F0;
+		@body-font-color: #888888;
+		@body-font-family: 'Varela Round', sans-serif;
+		@body-font-weight: normal;
+		@body-font-size: 1em;
+		@body-line-height: 2em;
+
+		@link-color: @primary-color;
+		@link-color-hover: lighten(@primary-color, 10%);
+
+	// Scrollbars (WebKit)
+		@-webkit-scrollbar-size: 7px;
+		@-webkit-scrollbar-radius: 0;
+		@-webkit-scrollbar-color: lighten(greyscale(@primary-color), 20%);
+		@-webkit-scrollbar-color-hover: lighten(@-webkit-scrollbar-color, 5%);
+		@-webkit-scrollbar-color-active: darken(@-webkit-scrollbar-color, 5%);
+		@-webkit-scrollbar-track-color: lighten(@-webkit-scrollbar-color, 30%);
+
+	// Scrollbars (IE)
+		@ie-scrollbar-face-color: lighten(greyscale(@primary-color), 20%);
+		@ie-scrollbar-3dlight-color: lighten(@ie-scrollbar-face-color, 10%);
+		@ie-scrollbar-highlight-color: lighten(@ie-scrollbar-face-color, 15%);
+		@ie-scrollbar-track-color: @primary-color-grey;
+		@ie-scrollbar-arrow-color: #FFFFFF;
+		@ie-scrollbar-shadow-color: darken(@ie-scrollbar-face-color, 10%);
+		@ie-scrollbar-dark-shadow-color: darken(@ie-scrollbar-face-color, 15%);
+
+	// Grid
+		@grid-boxed-border-top-size: 1px;
+		@grid-boxed-border-right-size: 1px;
+		@grid-boxed-border-bottom-size: 1px;
+		@grid-boxed-border-left-size: 1px;
+		@grid-boxed-border-style: solid;
+		@grid-boxed-border-color: #DDDDDD;
+		@grid-boxed-border-top-left-radius: 3px;
+		@grid-boxed-border-top-right-radius: 3px;
+		@grid-boxed-border-bottom-right-radius: 3px;
+		@grid-boxed-border-bottom-left-radius: 3px;
+		@grid-boxed-background: #FFFFFF;
+
+	// Typography
+		@horizontal-line-size: 1px;
+		@horizontal-line-style: solid;
+		@horizontal-line-color: #E7E7E7;
+
+		@h1-font-color: @primary-color;
+		@h2-font-color: @primary-color;
+		@h3-font-color: @primary-color;
+		@h4-font-color: @primary-color;
+		@h5-font-color: @primary-color;
+		@h6-font-color: lighten(@body-font-color, 20%);
+
+		@h1-font-family: 'Gafata', sans-serif;
+		@h2-font-family: 'Gafata', sans-serif;
+		@h3-font-family: 'Gafata', sans-serif;
+		@h4-font-family: 'Gafata', sans-serif;
+		@h5-font-family: 'Gafata', sans-serif;
+		@h6-font-family: 'Gafata', sans-serif;
+
+		@h1-font-size: 2em;
+		@h2-font-size: 1.8em;
+		@h3-font-size: 1.6em;
+		@h4-font-size: 1.4em;
+		@h5-font-size: 1.2em;
+		@h6-font-size: 1.1em;
+
+		@h1-font-weight: normal;
+		@h2-font-weight: normal;
+		@h3-font-weight: normal;
+		@h4-font-weight: normal;
+		@h5-font-weight: normal;
+		@h6-font-weight: normal;
+
+		@h1-font-variant: normal;
+		@h2-font-variant: normal;
+		@h3-font-variant: normal;
+		@h4-font-variant: normal;
+		@h5-font-variant: normal;
+		@h6-font-variant: normal;
+
+		@h1-text-transform: none;
+		@h2-text-transform: none;
+		@h3-text-transform: none;
+		@h4-text-transform: none;
+		@h5-text-transform: none;
+		@h6-text-transform: none;
+
+		@h1-letter-spacing: 0em;
+		@h2-letter-spacing: 0em;
+		@h3-letter-spacing: 0em;
+		@h4-letter-spacing: 0em;
+		@h5-letter-spacing: 0em;
+		@h6-letter-spacing: 0em;
+
+		@blockquote-border-size: 5px;
+		@blockquote-border-style: solid;
+		@blockquote-border-color: #E2E2E2;
+		@blockquote-border-color-hover: @primary-color;
+		@blockquote-background-color: #FFFFFF;
+		@blockquote-font-color: #7B7B7B;
+
+	// Forms
+		@input-border-top-size: 1px;
+		@input-border-right-size: 1px;
+		@input-border-bottom-size: 1px;
+		@input-border-left-size: 1px;
+		@input-border-style: solid;
+		@input-border-color: #E2E2E2;
+		@input-border-color-hover: darken(#E2E2E2, 5%);
+		@input-border-color-focus: darken(#E2E2E2, 10%);
+		@input-border-top-left-radius: 0px;
+		@input-border-top-right-radius: 0px;
+		@input-border-bottom-right-radius: 0px;
+		@input-border-bottom-left-radius: 0px;
+		@input-background-color: #FFFFFF;
+		@input-font-color: #6B6B6B;
+		@input-font-family: 'Varela Round', sans-serif;
+		@input-font-size: .9em;
+		@input-font-weight: normal;
+		@input-font-variant: normal;
+		@input-text-transform: none;
+		@input-letter-spacing: 0em;
+
+		@button-border-top-size: 1px;
+		@button-border-right-size: 1px;
+		@button-border-bottom-size: 1px;
+		@button-border-left-size: 1px;
+		@button-border-style: solid;
+		@button-border-color: darken(@primary-color, 5%);
+		@button-border-color-hover: lighten(@button-border-color, 5%);
+		@button-border-color-click: darken(@button-border-color-hover, 5%);
+		@button-border-top-left-radius: 3px;
+		@button-border-top-right-radius: 3px;
+		@button-border-bottom-right-radius: 3px;
+		@button-border-bottom-left-radius: 3px;
+		@button-background-color: @primary-color;
+		@button-background-color-hover: lighten(@button-background-color, 5%);
+		@button-background-color-click: darken(@button-background-color-hover, 5%);
+		@button-font-color: #FFFFFF;
+		@button-font-color-hover: #FFFFFF;
+		@button-font-color-click: #FFFFFF;
+		@button-font-family: 'Gafata', sans-serif;
+		@button-font-size: .9em;
+		@button-font-weight: normal;
+		@button-font-variant: normal;
+		@button-text-transform: uppercase;
+		@button-letter-spacing: 0em;
+
+	// JavaScript Disabled
+		@no-script-border-top-size: 1px;
+		@no-script-border-right-size: 1px;
+		@no-script-border-bottom-size: 1px;
+		@no-script-border-left-size: 1px;
+		@no-script-border-style: solid;
+		@no-script-border-color: darken(#FFF6BF, 13%);
+		@no-script-border-top-left-radius: 3px;
+		@no-script-border-top-right-radius: 3px;
+		@no-script-border-bottom-right-radius: 3px;
+		@no-script-border-bottom-left-radius: 3px;
+		@no-script-background-color: #FFF6BF;
+		@no-script-font-color: #7B7B7B;
+		@no-script-link-color: @primary-color;
+		@no-script-link-color-hover: lighten(@primary-color, 10%);
+
+	// Tipsy Tooltips
+		@tipsy-padding: 6px;
+		@tipsy-border-radius: 3px;
+		@tipsy-background-color: #000000;
+		@tipsy-font-color: #FFFFFF;
+		@tipsy-font-family: Verdana, Geneva, sans-serif;
+		@tipsy-font-size: .6em;
+
+
+//	#Theme Variables
+//	==================================================
+
+	// Header
+		@header-background-color: @primary-color;
+		@header-background-position: center;
+		@header-logo-description-spacing-large-desktop: 140px;
+		@header-logo-description-spacing-desktop-laptop: 100px;
+		@header-logo-description-spacing-laptop-mobile: 75px;
+		@header-logo-description-spacing-mobile: 30px;
+		@header-logo-description-border-size: 0px;
+		@header-logo-description-border-style: solid;
+		@header-logo-description-border-color: #FFF;
+		@header-logo-description-border-radius: 0px;
+		@header-logo-description-padding: 20px;
+		@header-logo-description-background-color: rgba(0, 0, 0, .6);
+		@header-logo-description-text-font-color: #FFFFFF;
+		@header-logo-description-text-text-shadow: 1px 1px 0 #000;
+		@header-logo-text-font-family: 'Flamenco', cursive;
+		@header-logo-text-font-size: 2em;
+		@header-logo-text-font-variant: normal;
+		@header-logo-text-text-trasnform: uppercase;
+		@header-logo-text-line-height: normal;
+		@header-logo-text-letter-spacing: normal;
+		@header-logo-description-font-family: 'Carrois Gothic SC', sans-serif;
+		@header-logo-description-font-size: .7em;
+		@header-logo-description-font-variant: normal;
+		@header-logo-description-text-trasnform: uppercase;
+		@header-logo-description-line-height: normal;
+		@header-logo-description-letter-spacing: .1em;
+
+	// Navigation
+		@navigation-background-color: rgba(0, 0, 0, .6);
+		@navigation-font-family: 'Carrois Gothic SC', sans-serif;
+		@navigation-font-size: .9em;
+		@navigation-font-color: #FFFFFF;
+		@navigation-font-color-hover: #FFFFFF;
+
+	// Content
+		@post-background-color: #FFFFFF;
+		@post-border-size: 1px;
+		@post-border-style: solid;
+		@post-border-color: #E2E2E2;
+		@post-border-radius: 0px;
+		@post-featured-jewel-border-size: 1px;
+		@post-featured-jewel-border-style: solid;
+		@post-featured-jewel-border-color: #E2E2E2;
+		@post-featured-jewel-background-color: #FFFFFF;
+		@post-featured-jewel-font-color: @body-font-color;
+		@tag-background-color: @primary-color;
+		@tag-background-color-hover: lighten(@primary-color, 5%);
+		@tag-font-color: #FFFFFF;
+		@tag-font-color-hover: #FFFFFF;
+		@disqus-font-color: #000000;
+
+	// Footer
+		@footer-background-color: @primary-color;
+		@footer-font-color: #FFFFFF;
+		@footer-font-family: 'Varela Round', sans-serif;
+		@footer-font-size: .8em;
+		@footer-link-color: #EEEEEE;
+		@footer-link-color-hover: #FFFFFF;
+		@footer-scroll-to-top-dimensions: 40px;
+		@footer-scroll-to-top-font-size: 1.8em;

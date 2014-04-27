@@ -1,0 +1,45 @@
+{{! Kyochi v1.1, Copyright 2014, Cloud Eight, http://www.cloud-eight.com }}
+
+{{! Pull default.hbs markup - DO NOT REMOVE }}
+	{{!< default}}
+
+{{! Article Feed }}
+	<main id="template-index" class="clearfix" role="main">
+		{{! Posts }}
+			{{#foreach posts}}
+				<article class="animate slow-mo{{#if @odd}} odd{{else}} even{{/if}}{{#if @first}} first{{/if}}{{#if @last}} last{{/if}}" data-anim-type="fadeIn" data-anim-delay="200">
+					<div class="container bm-remove tm-larger">
+						<div class="one-whole bm-remove {{post_class}}">
+							<div class="featured-jewel cursor-pointer tip-t-fade animate" data-tooltip="Featured" data-anim-type="bounceIn" data-anim-delay="200"><i class="fa fa-heart"></i></div>
+
+							<div class="one-half-percent desktop-tablet bm-remove omega">
+								<div class="bm-remove featured-preview"><a href="{{url}}" target="_self" class="block">{{content words="0"}}</a></div>
+							</div>
+
+							<div class="one-half-percent desktop-tablet bm-remove alpha last">
+								<h1 class="bm-small"><a href="{{url}}" target="_self">{{{title}}}</a></h1>
+								<h6><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></h6>
+
+								<div class="article-body">
+									<p>{{excerpt words="30"}}&hellip;</p>
+								</div>
+
+								<div class="text-right"><a href="{{url}}" target="_self" class="button w-large bm-remove text-uppercase">Continue Reading</a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="container bm-larger under-content"></div>
+				</article>
+
+				<hr class="bm-remove separator" />
+				
+			{{/foreach}}
+
+		{{!! Pagination }}
+			<div class="container bm-larger tm-larger pagination-container animate slow-mo" data-anim-type="fadeIn">
+				<div class="one-whole bm-remove">
+					{{pagination}}
+				</div>
+			</div>
+	</main>
