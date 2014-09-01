@@ -1,0 +1,227 @@
+{{! Kyochi v1.1, Copyright 2014, Cloud Eight, http://www.cloud-eight.com }}
+
+<!DOCTYPE html>
+
+<!-- Kyochi v1.1, Copyright 2014, Cloud Eight, http://www.cloud-eight.com -->
+
+<!--[if lt IE 7 ]><html class="no-js ie ie6 " lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->
+
+<head data-placeholder-focus="false" data-placeholder-live="false">
+
+  <title>{{meta_title}}</title>
+
+  {{! Meta Data }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <meta name="description" content="{{meta_description}}" />
+    <meta name="keywords" content="{{tags}}" />
+    <meta name="author" content="John McGoern" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+
+  {{! Facebook OpenGraph }}
+    <meta property="og:site_name" content="{{@blog.title}}">
+    <meta property="og:url" content="{{@blog.url}}" />
+    <meta property="og:title" content="{{@blog.title}}" />
+    <meta property="og:description" content="{{@blog.description}}" />
+    <meta property="og:image" content="{{@blog.url}}{{asset "images/Shield.gif"}}" /> <!-- To use your blogs logo change the `content` value to content="{{@blog.url}}{{@blog.logo}}" -->
+    <meta property="og:type" content="website">
+
+  {{! Twitter Card }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sites_twitter_handle">
+    <meta name="twitter:creator" content="@authors_twitter_handle">
+    <meta name="twitter:title" content="{{@blog.title}}">
+    <meta name="twitter:description" content="{{@blog.description}}">
+    <meta name="twitter:image:src" content="{{@blog.url}}{{asset "images/Shield.gif"}}"> <!-- To use your blogs logo change the `content` value to content="{{@blog.url}}{{@blog.logo}}" -->
+
+  {{! Favicons and Apple Icons }}
+    <link href="{{asset "images/fav-icon.png"}}" rel="icon" />
+    <link href="{{asset "images/app-icon-60.png"}}" rel="apple-touch-icon" />
+    <link href="{{asset "images/app-icon-76.png"}}" rel="apple-touch-icon" sizes="76x76" />
+    <link href="{{asset "images/app-icon-120.png"}}" rel="apple-touch-icon" sizes="120x120" />
+    <link href="{{asset "images/app-icon-152.png"}}" rel="apple-touch-icon" sizes="152x152" />
+
+  {{! Stylesheets }}
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round|Gafata|Flamenco|Carrois+Gothic+SC" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="{{asset "css/normalize.css"}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset "css/tipsy.css"}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset "css/animations.min.css"}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset "css/test.min.css"}}" rel="stylesheet" type="text/css" media="all" />
+
+    <!--<link href="{{asset "css/style.less"}}" rel="stylesheet/less" type="text/css" media="all" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.6.3/less.min.js" type="text/javascript"></script>-->
+
+  {{! HTML5 SHIV and Media Query Polyfill }}
+    <!--[if lt IE 9]>
+      <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="http://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+  {{! Google Analytics }}
+
+
+  {{! Ghost Head Outputs }}
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}} clearfix" itemscope itemtype="http://schema.org/WebPage">
+  {{! Facebook API }}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+  {{! Header }}
+    <header>
+      <div class="clearfix">
+        <div id="header" class="one-whole-percent bm-remove text-center" {{#if @blog.cover}}style="background-image: url({{@blog.cover}});"{{/if}}>
+          <div id="logo-description" class="center-vert">
+
+          </div>
+          <div id="logo-action" class="center-vert">
+            <a href="{{@blog.url}}" target="_self">
+              {{#if @blog.logo}}
+                <p id="logo-img" class="bm-small"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></p>
+              {{else}}
+                <p id="logo-text" class="bm-small">{{@blog.title}}</p>
+              {{/if}}
+
+              <p id="blog-description" class="bm-remove">{{@blog.description}}</p>
+            </a>
+            <div class="three-thirds">
+              <div class="one-thirds">
+                  <h1>
+                    Discover Our Passion
+                  </h1>
+                  <p>
+                    There are great things happening here. Can you see them? I can.
+                  </p>
+              </div>
+              <div class="one-thirds">
+                  <h1>
+                    Find Your New Home
+                  </h1>
+                  <p>
+                    There are great things happening here. Can you see them? I can.
+                  </p>
+              </div>
+              <div class="one-thirds">
+                  <h1>
+                    Understand Efficiency
+                  </h1>
+                  <p>
+                    There are great things happening here. Can you see them? I can.
+                  </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="scroll-to-content" class="cursor-pointer"><i class="fa fa-angle-down"></i></div>
+
+          <nav>
+            <div class="clearfix">
+              <div id="no-touch-navigation" class="one-whole-percent bm-remove text-uppercase">
+                <div class="one-half-percent desktop-tablet bm-remove">
+                  <ul class="unstyled inline bm-remove links">
+                    <li><a href="/" target="_self">Home</a></li>
+                    <li><a href="/about-us" target="_self">About Us</a></li>
+                    <li><a href="/contact-us" target="_self">Contact Us</a></li>
+                  </ul>
+                </div>
+
+                <div class="one-half-percent desktop-tablet bm-remove last">
+                  <div class="float-right">
+                    <ul class="unstyled inline bm-remove social-networks">
+                      {{!-- <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Facebook"><i class="fa fa-facebook fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Twitter"><i class="fa fa-twitter fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Google+"><i class="fa fa-google-plus fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Pinterest"><i class="fa fa-pinterest fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Instagram"><i class="fa fa-instagram fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Flickr"><i class="fa fa-flickr fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="RSS"><i class="fa fa-rss fa-fw"></i></a></li> --}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <nav>
+      <div id="touch-navigation" class="text-center">
+        <a href="#" target="_self" id="navigation-toggle"><i class="fa fa-bars fa-fw"></i></a>
+
+        <div id="menu-slide">
+          <hr class="bm-small" />
+
+          <ul class="unstyled bm-remove links"></ul>
+
+          <hr class="tm-small bm-small" />
+
+          <ul class="unstyled inline inline-block bm-remove social-networks">
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  {{! No JavaScript }}
+    <noscript>
+      <div class="clearfix">
+        <div class="container bm-larger tm-larger text-center">
+          <div id="no-script">
+            <p class="bm-smaller"><strong>JavaScript Disabled</strong></p>
+            <p class="bm-smaller">Certain features of this site may not function correctly without JavaScript enabled</p>
+            <p class="bm-remove"><a href="http://enable-javascript.com/" target="_blank">Find out how to enable JavaScript in your browser</a></p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="bm-remove separator" />
+    </noscript>
+
+  {{! Content }}
+    {{{body}}}
+
+  {{! Footer }}
+    <footer>
+      <div id="footer" class="one-whole-percent bm-remove text-center animate slow-mo" data-anim-type="fadeIn">
+        <div class="scroll-to-top cursor-pointer tip-t-fade" data-tooltip="Scroll To Top"><i class="fa fa-chevron-circle-up fa-fw"></i></div>
+
+        <div class="container bm-remove">
+          Copyright &copy; <a href="/" target="_self">{{@blog.title}}</a> {{date format="YYYY"}}.
+        </div>
+      </div>
+    </footer>
+
+  {{! Ghost Footer Outputs }}
+    {{ghost_foot}}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="{{asset "js/smoothscroll.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/placeholders.min.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/visible.min.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/fitvids.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/tipsy.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/animations.min.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/backbone.js"}}" type="text/javascript"></script>
+    <script src="{{asset "js/theme.js"}}" type="text/javascript"></script>
+
+</body>
+</html>
