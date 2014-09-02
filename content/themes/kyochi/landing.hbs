@@ -104,30 +104,30 @@
               <p id="blog-description" class="bm-remove">{{@blog.description}}</p>
             </a>
             <div class="three-thirds">
-              <div class="one-thirds">
-                  <h1>
-                    Discover Our Passion
-                  </h1>
-                  <p>
-                    There are great things happening here. Can you see them? I can.
-                  </p>
-              </div>
-              <div class="one-thirds">
-                  <h1>
-                    Find Your New Home
-                  </h1>
-                  <p>
-                    There are great things happening here. Can you see them? I can.
-                  </p>
-              </div>
-              <div class="one-thirds">
-                  <h1>
-                    Understand Efficiency
-                  </h1>
-                  <p>
-                    There are great things happening here. Can you see them? I can.
-                  </p>
-              </div>
+              <a href="/standards" target="_self" class="one-thirds">
+                <h1>
+                  Expect More
+                </h1>
+                <p>
+                  More Innovation, More Savings, More Value. See how we do it.
+                </p>
+              </a>
+              <a href="/plans" target="_self" class="one-thirds">
+                <h1>
+                  Find Your Next Home
+                </h1>
+                <p>
+                  Browse Plans Packed with energy savings and premium finishes.
+                </p>
+              </a>
+              <a href="/#blog" target="_self"  class="one-thirds">
+                <h1>
+                  Understand Efficiency
+                </h1>
+                <p>
+                  See how easy it is to understand energy savings through our blog.
+                </p>
+              </a>
             </div>
           </div>
 
@@ -136,10 +136,12 @@
           <nav>
             <div class="clearfix">
               <div id="no-touch-navigation" class="one-whole-percent bm-remove text-uppercase">
-                <div class="one-half-percent desktop-tablet bm-remove">
+                <div class="one-half-percent desktop-tablet bm-remove text-center">
                   <ul class="unstyled inline bm-remove links">
                     <li><a href="/" target="_self">Home</a></li>
-                    <li><a href="/about-us" target="_self">About Us</a></li>
+                    <li><a href="/about-us" target="_self">Who We Are</a></li>
+                    <li><a href="/plans" target="_self">Browse Plans</a></li>
+                    <li><a href="/neighborhoods" target="_self">Find a Neighborhood</a></li>
                     <li><a href="/contact-us" target="_self">Contact Us</a></li>
                   </ul>
                 </div>
@@ -197,7 +199,9 @@
     </noscript>
 
   {{! Content }}
-    {{{body}}}
+    <div id="blog">
+      {{{body}}}
+    </div>
 
   {{! Footer }}
     <footer>
