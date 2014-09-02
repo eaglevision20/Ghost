@@ -80,7 +80,9 @@
 				text-shadow: @header-logo-description-text-text-shadow;
 				.transition(background, .5s, ease-in-out);
 
-				&:hover { background: lighten(@header-logo-description-background-color, 10%); }
+				// &:hover { background: lighten(@header-logo-description-background-color, 10%); }
+
+				&.hovers:hover { background: lighten(@header-logo-description-background-color, 0%); }
 
 				#logo-img,
 				#logo-text {

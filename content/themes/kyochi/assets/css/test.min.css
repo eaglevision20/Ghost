@@ -1638,8 +1638,8 @@ hr.separator {
   -ms-transition: background 0.5s ease-in-out;
   transition: background 0.5s ease-in-out;
 }
-#header #logo-action a:hover {
-  background: rgba(26, 26, 26, 0.6);
+#header #logo-action a.hovers:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 #header #logo-action a #logo-img,
 #header #logo-action a #logo-text {
