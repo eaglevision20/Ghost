@@ -21,8 +21,8 @@
 
 		$('.home-template #header').css({ 'height': winHeight });
 
-		if (winHeight > 320) {
-			$('.home-template #logo-description').css({ 'marginTop': ((winHeight - $('#logo-description').height()) / 2) - 75 });
+		if (winHeight < 600 && winWidth < 1150) {
+			$('.home-template #header').css({ 'height': '700px' });
 		}
 	}
 
