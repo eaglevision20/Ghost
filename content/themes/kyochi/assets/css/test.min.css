@@ -1893,7 +1893,7 @@ hr.separator {
   animation-name: scrollToContent;
 }
 .home-template #header {
-  min-height: 320px;
+  min-height: 700px;
 }
 .home-template #header #scroll-to-content {
   display: inline-block;
