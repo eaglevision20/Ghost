@@ -22,7 +22,7 @@
 		$('.home-template #header').css({ 'height': winHeight });
 
 		if (winHeight < 600 && winWidth < 1150) {
-			$('.home-template #header').css({ 'height': '900px' });
+			$('.home-template #header').css({ 'height': '1200px' });
 		}
 	}
 
