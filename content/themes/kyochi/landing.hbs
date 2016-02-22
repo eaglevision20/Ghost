@@ -90,13 +90,13 @@
     <header>
       <div class="clearfix">
         <div id="header" class="one-whole-percent bm-remove text-center" {{#if @blog.cover}}style="background-image: url({{@blog.cover}});"{{/if}}>
-          <div id="logo-description" class="center-vert">
+          {{!-- <div id="logo-description" class="center-vert">
 
-          </div>
+          </div> --}}
           <div id="logo-action" class="center-vert">
             <a class="no-hover" href="{{@blog.url}}" target="_self">
               {{#if @blog.logo}}
-                <p id="logo-img" class="bm-small"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></p>
+                <p id="logo-img" class="bm-small" style="max-width:300px;"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></p>
               {{else}}
                 <p id="logo-text" class="bm-small">{{@blog.title}}</p>
               {{/if}}
@@ -131,12 +131,12 @@
             </div>
           </div>
 
-          <div id="scroll-to-content" class="cursor-pointer"><i class="fa fa-angle-down"></i></div>
+          {{!-- <div id="scroll-to-content" class="cursor-pointer"><i class="fa fa-angle-down"></i></div> --}}
 
           <nav>
             <div class="clearfix">
               <div id="no-touch-navigation" class="one-whole-percent bm-remove text-uppercase">
-                <div class="one-half-percent desktop-tablet bm-remove text-center">
+                <div class="desktop-tablet bm-remove text-center">
                   <ul class="unstyled inline bm-remove links">
                     <li><a href="/" target="_self">Home</a></li>
                     <li><a href="/about-us" target="_self">Who We Are</a></li>
@@ -146,19 +146,19 @@
                   </ul>
                 </div>
 
-                <div class="one-half-percent desktop-tablet bm-remove last">
+                {{!-- <div class="one-half-percent desktop-tablet bm-remove last">
                   <div class="float-right">
                     <ul class="unstyled inline bm-remove social-networks">
-                      {{!-- <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Facebook"><i class="fa fa-facebook fa-fw"></i></a></li>
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Facebook"><i class="fa fa-facebook fa-fw"></i></a></li>
                       <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Twitter"><i class="fa fa-twitter fa-fw"></i></a></li>
                       <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Google+"><i class="fa fa-google-plus fa-fw"></i></a></li>
                       <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Pinterest"><i class="fa fa-pinterest fa-fw"></i></a></li>
                       <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Instagram"><i class="fa fa-instagram fa-fw"></i></a></li>
                       <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="Flickr"><i class="fa fa-flickr fa-fw"></i></a></li>
-                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="RSS"><i class="fa fa-rss fa-fw"></i></a></li> --}}
+                      <li><a href="#" target="_self" class="tip-t-fade" data-tooltip="RSS"><i class="fa fa-rss fa-fw"></i></a></li>
                     </ul>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
           </nav>
@@ -199,9 +199,9 @@
     </noscript>
 
   {{! Content }}
-   {{!--  <div id="blog">
+    <div id="blog">
       {{{body}}}
-    </div> --}}
+    </div>
 
   {{! Footer }}
     <footer>
